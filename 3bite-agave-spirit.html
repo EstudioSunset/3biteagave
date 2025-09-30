@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3Bite Agave Spirit — Oaxacan Mezcal, Crafted with Purpose</title>
+  <meta name="description" content="3Bite Agave Spirit is an artisan mezcal imported from Oaxaca, Mexico. Discover our story, traditional process, tasting notes, sustainability, pairings, and where to buy." />
+  <link rel="canonical" href="#" />
+  <meta name="theme-color" content="#2F6F4E" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="3Bite Agave Spirit — Oaxacan Mezcal, Crafted with Purpose" />
+  <meta property="og:description" content="Artisan mezcal imported from Oaxaca: story, process, tasting notes, cocktails, and sustainability." />
+  <!-- Replace with a real Pixabay image URL of your hero image: -->
+  <meta property="og:image" content="REPLACE_WITH_PIXABAY_OG_IMAGE_URL" />
+  <meta property="og:url" content="#" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="3Bite Agave Spirit — Oaxacan Mezcal, Crafted with Purpose" />
+  <meta name="twitter:description" content="Artisan mezcal imported from Oaxaca: story, process, tasting notes, cocktails, and sustainability." />
+  <meta name="twitter:image" content="REPLACE_WITH_PIXABAY_OG_IMAGE_URL" />
+
+  <style>
+    :root{
+      --agave:#2F6F4E; /* Agave green */
+      --agave-ink:#244F3A; /* deeper green */
+      --sand:#E8E1D9; /* warm sand */
+      --earth:#9C7A5A; /* earth brown */
+      --ink:#111; /* near black */
+      --soft:#F6F3EF; /* soft white */
+      --white:#fff;
+      --focus:#0A7; /* accessible focus hue */
+      --radius:1.25rem;
+      --shadow:0 8px 24px rgba(0,0,0,.12);
+      --max:1200px;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;color:var(--ink);background:var(--soft)}
+    .serif{font-family: Georgia, "Times New Roman", Times, serif}
+    a{color:var(--agave-ink);text-decoration-thickness:.08em}
+    img{max-width:100%;height:auto;border-radius:calc(var(--radius) - .25rem);}
+    .container{width:clamp(280px,92vw,var(--max));margin-inline:auto}
+    .section{padding: clamp(2.5rem, 5vw, 4rem) 1rem}
+
+    /* Skip link */
+    .skip-link{position:absolute;left:-9999px;top:auto;transition:.2s}
+    .skip-link:focus{left:1rem;top:1rem;z-index:999;background:#000;color:#fff;padding:.5rem 1rem;border-radius:.5rem}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #0001}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.75rem 1rem}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:.2px}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--agave),#58a17e);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:var(--shadow)}
+    .nav a{font-weight:600}
+    .nav ul{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none;margin:0;padding:0}
+    .nav .right{display:flex;align-items:center;gap:.5rem}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1rem;border-radius:999px;border:1px solid #0000;background:var(--agave);color:#fff;box-shadow:var(--shadow);min-height:48px}
+    .btn.secondary{background:transparent;color:var(--agave-ink);border-color:#0002}
+    .btn.ghost{background:transparent;color:var(--ink);border-color:#0000}
+    .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+    /* Mobile nav */
+    .menu-btn{display:none}
+    @media (max-width: 900px){
+      .nav ul.links{display:none}
+      .menu-btn{display:inline-flex}
+      .nav.open ul.links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:64px;background:#fff;padding:1rem;border-bottom:1px solid #0001}
+    }
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg,#ffffff, #f4f2ee);}
+    .hero .wrap{display:grid;gap:2rem;align-items:center}
+    @media (min-width: 900px){
+      .hero .wrap{grid-template-columns: 1.05fr .95fr}
+    }
+    .tag{display:inline-block;background:var(--sand);color:#344; padding:.3rem .6rem;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.2px}
+    h1{font-size:clamp(2rem, 4vw, 3rem);margin:.25rem 0 0;font-weight:900}
+    h2{font-size:clamp(1.5rem, 3vw, 2.2rem);margin:.25rem 0 1rem}
+    h3{font-size:clamp(1.1rem, 2.2vw, 1.4rem);margin:0 0 .25rem}
+    p{margin:.5rem 0 1rem}
+    .lead{font-size:clamp(1.05rem, 2vw, 1.15rem);color:#333}
+    .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.25rem}
+    .hero-figure{position:relative}
+    .card{background:var(--white);border:1px solid #0001;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+
+    /* Grids */
+    .grid{display:grid;gap:1rem}
+    .grid.cols-2{grid-template-columns: 1fr}
+    .grid.cols-3{grid-template-columns: 1fr}
+    @media (min-width: 900px){
+      .grid.cols-2{grid-template-columns: 1fr 1fr}
+      .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    }
+
+    /* Feature list */
+    .features{display:grid;gap:1rem}
+    .spec{display:grid;grid-template-columns: 140px 1fr;gap:.75rem;align-items:start}
+    .spec strong{color:#123}
+
+    /* Process */
+    .step{display:grid;grid-template-columns: 48px 1fr;gap:1rem}
+    .icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--agave),#58a17e);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:var(--shadow)}
+
+    /* Pairings & Cocktails */
+    .list{list-style:disc;padding-left:1.1rem}
+    .cocktail{border-left:4px solid var(--agave);padding-left:1rem}
+
+    /* FAQ */
+    .faq-item{border:1px solid #0001;border-radius:var(--radius);background:#fff;margin:.5rem 0;overflow:hidden}
+    .faq-q{width:100%;text-align:left;padding:1rem;font-weight:700;background:#fff;border:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-q:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+    .faq-a{padding:0 1rem 1rem}
+
+    /* Form */
+    form{display:grid;gap:.75rem}
+    label{font-weight:700}
+    input, textarea{width:100%;padding:.8rem;border-radius:.8rem;border:1px solid #0002;background:#fff;min-height:48px}
+    textarea{min-height:120px}
+
+    /* Footer */
+    footer{background:#0e0e0e;color:#eee}
+    footer a{color:#e1f4eb}
+
+    /* Language toggle */
+    [data-l10n]{display:inline}
+    [data-lang="en"] [data-l10n="es"],
+    [data-lang="es"] [data-l10n="en"]{display:none}
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+    }
+      
+    /* --- Mobile tweaks for tighter screens --- */
+    @media (max-width: 600px){
+      .cta-row{flex-direction:column}
+      .cta-row .btn{width:100%}
+      .nav .right{gap:.25rem}
+    }
+    @media (max-width: 380px){
+      h1{font-size:clamp(1.75rem,8vw,2rem)}
+      .brand span{display:none} /* keep logo only to save space */
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="nav container" aria-label="Main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">3B</div>
+        <span>3Bite Agave Spirit</span>
+      </div>
+
+      <button class="btn ghost menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+      <ul class="links" role="list">
+        <li><a href="#story"><span data-l10n="en">Story</span><span data-l10n="es">Historia</span></a></li>
+        <li><a href="#process"><span data-l10n="en">Process</span><span data-l10n="es">Proceso</span></a></li>
+        <li><a href="#features"><span data-l10n="en">Features</span><span data-l10n="es">Características</span></a></li>
+        <li><a href="#sustainability"><span data-l10n="en">Sustainability</span><span data-l10n="es">Sostenibilidad</span></a></li>
+        <li><a href="#pairings"><span data-l10n="en">Pairings & Cocktails</span><span data-l10n="es">Maridajes & Cocteles</span></a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#buy"><span data-l10n="en">Buy</span><span data-l10n="es">Comprar</span></a></li>
+      </ul>
+
+      <div class="right">
+        <button class="btn secondary" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+        <button class="btn secondary" id="lang-es" data-lang="es" aria-pressed="false">ES</button>
+        <a class="btn" href="#buy"><span data-l10n="en">Where to buy</span><span data-l10n="es">Dónde comprar</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero section" aria-label="Hero">
+      <div class="container wrap">
+        <div>
+          <span class="tag"><span data-l10n="en">Imported from Oaxaca, Mexico</span><span data-l10n="es">Importado desde Oaxaca, México</span></span>
+          <h1 class="serif">
+            <span data-l10n="en">Mezcal with a modern soul and ancient roots.</span>
+            <span data-l10n="es">Mezcal con alma moderna y raíces ancestrales.</span>
+          </h1>
+          <p class="lead">
+            <span data-l10n="en">3Bite Agave Spirit is crafted by families who have distilled mezcal for generations—slow-cooked, stone-crushed, naturally fermented, and distilled with care.</span>
+            <span data-l10n="es">3Bite Agave Spirit nace de familias que destilan mezcal por generaciones: cocción lenta, molienda con tahona, fermentación natural y destilación precisa.</span>
+          </p>
+          <div class="cta-row">
+            <a class="btn" href="#buy"><span data-l10n="en">Buy now</span><span data-l10n="es">Comprar ahora</span></a>
+            <a class="btn secondary" href="#process"><span data-l10n="en">See the process</span><span data-l10n="es">Conoce el proceso</span></a>
+          </div>
+        </div>
+        <figure class="hero-figure card">
+          <!-- Pixabay placeholder: replace src with a real Pixabay URL (e.g., an agave field or bottle shot) -->
+          <img
+            src="/agave-field-sunset.jpg"
+            alt="Agave fields at sunset"
+            width="1200" height="800"
+            loading="lazy" decoding="async"
+            data-query="agave fields at sunset"
+            srcset=""
+            sizes="(min-width:900px) 550px, 92vw"
+          />
+          <figcaption class="sr-only"><span data-l10n="en">Agave fields bathed in golden light.</span><span data-l10n="es">Campos de agave bañados por luz dorada.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="section" aria-label="Story">
+      <div class="container grid cols-2">
+        <div>
+          <h2 class="serif"><span data-l10n="en">Oaxaca & Terroir</span><span data-l10n="es">Oaxaca & Terroir</span></h2>
+          <p>
+            <span data-l10n="en">Mezcal is one of Mexico’s oldest spirits, with roots that trace back hundreds of years to the indigenous peoples of Oaxaca and surrounding regions. Long before Spanish colonization, agave was considered sacred—its fibers, sap, and roasted hearts were central to daily life. When distillation techniques arrived in the 16th century, they combined with ancestral practices, giving birth to what we now know as mezcal.</span>
+            <span data-l10n="es">Valles de altura, suelos volcánicos y agaves de crecimiento lento dan forma a nuestro mezcal. Cada lote honra la ecología y el pulso de la tierra: sin prisas, con respeto.</span>
+          </p>
+          <p>
+            <span data-l10n="en">Every step of its creation reflects this history: the harvesting of mature agave, the slow roasting of its piñas in earthen pits, the crushing by stone wheel, natural fermentation in open-air wooden vats, and careful distillation. These methods, passed from generation to generation, preserve not only flavor but also a cultural heritage.</span>
+            <span data-l10n="es">Del campo al horno y del alambique al vaso, 3Bite equilibra la tradición con controles modernos, para que pruebes agave puro, ahumado guiado y un final mineral prolongado.</span>
+          </p>
+          <p>
+             <span data-l10n="en"></span>Today, mezcal is celebrated worldwide as a symbol of Mexican identity. It is smoky yet refined, rustic yet complex—a spirit that carries the essence of the land, the resilience of its people, and the wisdom of tradition. In every sip lies a story that began centuries ago, and continues to evolve with each new generation of mezcaleros.</span>
+             <span data-l10n="es">Hoy, el mezcal es símbolo de identidad mexicana, apreciado globalmente. Ahumado pero refinado, rústico pero complejo—un destilado que lleva la esencia de la tierra, la resiliencia de su gente y la sabiduría de la tradición. En cada sorbo hay una historia que comenzó hace siglos y sigue evolucionando con cada nueva generación de mezcaleros.</span>
+          </p>
+        </div>
+        
+        <figure class="card">
+          <img
+            src="/oaxaca-agave-field-agave-spirit.jpg"
+            alt="Sierra landscape in Oaxaca"
+            width="1000" height="700" loading="lazy" decoding="async" data-query="oaxaca landscape" />
+        </figure>
+      </div>
+    </section>
+    <div class="container">
+        <section class="card" aria-label="Mezcal History" style="margin-bottom:1.5rem">
+            <h3 class="serif"><span data-l10n="en">A Brief History of Mezcal</span><span data-l10n="es">Breve historia del mezcal</span></h3>
+            <p>
+                <span data-l10n="en">
+                    Mezcal traces its roots to pre-Hispanic Mexico, where indigenous peoples fermented agave for ceremonial and medicinal use. With the arrival of distillation techniques in the 16th century, mezcal evolved into a spirit that reflects the land, culture, and craftsmanship of Oaxaca and beyond. Today, mezcal stands as a symbol of tradition, resilience, and community—each bottle a story of generations.
+                </span>
+                <span data-l10n="es">
+                    El mezcal tiene raíces prehispánicas en México, donde los pueblos originarios fermentaban agave con fines ceremoniales y medicinales. Con la llegada de la destilación en el siglo XVI, el mezcal evolucionó en un destilado que refleja la tierra, la cultura y el oficio de Oaxaca y otras regiones. Hoy, el mezcal es símbolo de tradición, resiliencia y comunidad—cada botella cuenta la historia de generaciones.
+                </span>
+            </p>
+        </section>
+    </div>
+
+    <!-- PROCESS -->
+    <section id="process" class="section" aria-label="Process">
+      <div class="container">
+        <h2 class="serif"><span data-l10n="en">Traditional process, step by step</span><span data-l10n="es">Proceso tradicional, paso a paso</span></h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <div class="step">
+              <div class="icon" aria-hidden="true">🌿</div>
+              <div>
+                <h3><span data-l10n="en">Harvest (Jima)</span><span data-l10n="es">Jima (Cosecha)</span></h3>
+                <p>
+                  <span data-l10n="en">Mature agaves are hand-selected and trimmed to the heart (piña). Field selection preserves biodiversity and ensures even ripeness.</span>
+                  <span data-l10n="es">Agaves maduros se seleccionan a mano y se recortan hasta la piña. La selección en campo preserva la biodiversidad y asegura madurez uniforme.</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step">
+              <div class="icon" aria-hidden="true">🔥</div>
+              <div>
+                <h3><span data-l10n="en">Earthen pit roast</span><span data-l10n="es">Cocción en horno cónico</span></h3>
+                <p>
+                  <span data-l10n="en">Piñas roast for days in a stone-lined pit, giving a gentle, guided smokiness that never overwhelms the agave’s natural sweetness.</span>
+                  <span data-l10n="es">Las piñas se cuecen por días en un horno cónico de piedra, aportando un ahumado guiado que no eclipsa la dulzura natural del agave.</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step">
+              <div class="icon" aria-hidden="true">🪨</div>
+              <div>
+                <h3><span data-l10n="en">Tahona crush</span><span data-l10n="es">Molienda con tahona</span></h3>
+                <p>
+                  <span data-l10n="en">A stone wheel slowly crushes roasted agave, preserving fibers and releasing rich juices for a textured, expressive ferment.</span>
+                  <span data-l10n="es">Una rueda de piedra tritura lentamente el agave cocido, preservando fibras y liberando jugos para una fermentación expresiva.</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step">
+              <div class="icon" aria-hidden="true">🌾</div>
+              <div>
+                <h3><span data-l10n="en">Natural fermentation</span><span data-l10n="es">Fermentación natural</span></h3>
+                <p>
+                  <span data-l10n="en">Wild yeasts work in open wooden vats, guided by temperature and time. No shortcuts—just patient transformation.</span>
+                  <span data-l10n="es">Levaduras silvestres actúan en tinas de madera, guiadas por temperatura y tiempo. Sin atajos: sólo transformación paciente.</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step">
+              <div class="icon" aria-hidden="true">🥃</div>
+              <div>
+                <h3><span data-l10n="en">Copper or clay distillation</span><span data-l10n="es">Destilación en cobre o barro</span></h3>
+                <p>
+                  <span data-l10n="en">Double distillation refines aromas and texture. Copper yields clarity; clay brings rustic depth—both faithful to tradition.</span>
+                  <span data-l10n="es">La doble destilación afina aromas y textura. El cobre aporta claridad; el barro, profundidad rústica—ambos fieles a la tradición.</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step">
+              <div class="icon" aria-hidden="true">✅</div>
+              <div>
+                <h3><span data-l10n="en">Rest & bottle</span><span data-l10n="es">Reposo y embotellado</span></h3>
+                <p>
+                  <span data-l10n="en">Batches rest to harmonize before bottling. We test for balance, purity, and a lingering mineral finish.</span>
+                  <span data-l10n="es">Los lotes reposan para armonizar antes del embotellado. Verificamos balance, pureza y un final mineral persistente.</span>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section" aria-label="Features">
+      <div class="container grid cols-2">
+        <div>
+          <h2 class="serif"><span data-l10n="en">Tasting notes & specs</span><span data-l10n="es">Notas de cata & especificaciones</span></h2>
+          <div class="features">
+            <div class="spec"><strong><span data-l10n="en">Agave</span><span data-l10n="es">Agave</span></strong><div>Espadín (Angustifolia) — <span data-l10n="en">small-batch</span><span data-l10n="es">lotes pequeños</span></div></div>
+            <div class="spec"><strong>ABV</strong><div>45% <span data-l10n="en">(placeholder)</span><span data-l10n="es">(placeholder)</span></div></div>
+            <div class="spec"><strong><span data-l10n="en">Appearance</span><span data-l10n="es">Vista</span></strong><div><span data-l10n="en">Crystal clear, silver highlights, slow legs.</span><span data-l10n="es">Transparente, brillos plateados, lágrimas lentas.</span></div></div>
+            <div class="spec"><strong><span data-l10n="en">Nose</span><span data-l10n="es">Nariz</span></strong><div><span data-l10n="en">Citrus peel, green herbs, warm smoke.</span><span data-l10n="es">Cáscara de cítricos, hierbas verdes, ahumado cálido.</span></div></div>
+            <div class="spec"><strong><span data-l10n="en">Palate</span><span data-l10n="es">Boca</span></strong><div><span data-l10n="en">Roasted agave, white pepper, river-stone minerality; long, dry finish.</span><span data-l10n="es">Agave asado, pimienta blanca, mineralidad de piedra; final largo y seco.</span></div></div>
+            <div class="spec"><strong><span data-l10n="en">Serve</span><span data-l10n="es">Servicio</span></strong><div><span data-l10n="en">Neat in a veladora or copita at cool room temperature. Optional: orange slice & sal de gusano.</span><span data-l10n="es">Solo en veladora o copita a temperatura fresca. Opcional: gajo de naranja y sal de gusano.</span></div></div>
+          </div>
+        </div>
+        <figure class="card">
+          <img
+            src="/alcohol-5888208_640.jpg"
+            alt="Hand holding a mezcal glass"
+            width="1000" height="700" loading="lazy" decoding="async" data-query="hand holding mezcal glass" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAIRINGS & COCKTAILS -->
+    <section id="pairings" class="section" aria-label="Pairings and Cocktails">
+      <div class="container grid cols-2">
+        <div>
+          <h2 class="serif"><span data-l10n="en">Pairings</span><span data-l10n="es">Maridajes</span></h2>
+          <ul class="list">
+            <li><span data-l10n="en">Barbacoa tacos with charred salsa and lime—smoke meets savor.</span><span data-l10n="es">Tacos de barbacoa con salsa tatemada y limón—humo y umami en balance.</span></li>
+            <li><span data-l10n="en">Aged cheese (añejo) with honeyed nuts—salty, sweet, and mineral.</span><span data-l10n="es">Queso añejo con nueces mieladas—salado, dulce y mineral.</span></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="serif"><span data-l10n="en">Quick cocktails</span><span data-l10n="es">Cocteles rápidos</span></h2>
+          <div class="grid">
+            <article class="cocktail card">
+              <h3><span data-l10n="en">Classic Mezcalita</span><span data-l10n="es">Mezcalita clásica</span></h3>
+              <p><strong><span data-l10n="en">Build</span><span data-l10n="es">Preparación</span>:</strong> <span data-l10n="en">Shake mezcal, lime, orange liqueur; strain over ice; salted rim optional.</span><span data-l10n="es">Agita mezcal, limón y licor de naranja; cuela sobre hielo; escarcha opcional.</span></p>
+              <p><strong><span data-l10n="en">Ingredients</span><span data-l10n="es">Ingredientes</span>:</strong> <span data-l10n="en">2 oz mezcal, 1 oz fresh lime, 0.5 oz orange liqueur.</span><span data-l10n="es">2 oz mezcal, 1 oz limón, 0.5 oz licor de naranja.</span></p>
+            </article>
+            <article class="cocktail card">
+              <h3><span data-l10n="en">Mezcal Paloma</span><span data-l10n="es">Paloma de mezcal</span></h3>
+              <p><strong><span data-l10n="en">Build</span><span data-l10n="es">Preparación</span>:</strong> <span data-l10n="en">Stir mezcal and grapefruit soda over ice; splash of lime.</span><span data-l10n="es">Sirve mezcal con refresco de toronja sobre hielo; toque de limón.</span></p>
+              <p><strong><span data-l10n="en">Ingredients</span><span data-l10n="es">Ingredientes</span>:</strong> <span data-l10n="en">2 oz mezcal, 4 oz grapefruit soda, lime wedge.</span><span data-l10n="es">2 oz mezcal, 4 oz refresco de toronja, gajo de limón.</span></p>
+            </article>
+            <article class="cocktail card">
+              <h3><span data-l10n="en">Oaxacan Old Fashioned</span><span data-l10n="es">Old Fashioned oaxaqueño</span></h3>
+              <p><strong><span data-l10n="en">Build</span><span data-l10n="es">Preparación</span>:</strong> <span data-l10n="en">Stir mezcal with agave syrup and bitters; orange twist.</span><span data-l10n="es">Mezcla mezcal con jarabe de agave y bitters; twist de naranja.</span></p>
+              <p><strong><span data-l10n="en">Ingredients</span><span data-l10n="es">Ingredientes</span>:</strong> <span data-l10n="en">2 oz mezcal, 0.25 oz agave syrup, 2 dashes bitters.</span><span data-l10n="es">2 oz mezcal, 0.25 oz jarabe de agave, 2 dash de bitters.</span></p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSTAINABILITY -->
+    <section id="sustainability" class="section" aria-label="Sustainability">
+      <div class="container grid cols-2">
+        <div>
+          <h2 class="serif"><span data-l10n="en">Sustainability & community</span><span data-l10n="es">Sostenibilidad & comunidad</span></h2>
+          <ul class="list">
+            <li><span data-l10n="en">Field stewardship: replanting programs and staggered harvesting protect agave cycles.</span><span data-l10n="es">Cuidado del campo: reforestación y cosecha escalonada para proteger ciclos del agave.</span></li>
+            <li><span data-l10n="en">Fair partnerships: transparent pricing and long-term commitments with mezcalero families.</span><span data-l10n="es">Alianzas justas: precios transparentes y compromisos de largo plazo con familias mezcaleras.</span></li>
+            <li><span data-l10n="en">Lower footprint: efficient roasting and water practices reduce waste without losing character.</span><span data-l10n="es">Menor huella: prácticas eficientes de cocción y agua reducen desechos sin perder carácter.</span></li>
+          </ul>
+        </div>
+        <figure class="card">
+          <img
+            src="/mexico-2297024_1280.jpg"
+            alt="Oaxacan artisan working with agave"
+            width="1000" height="700" loading="lazy" decoding="async" data-query="mexico artisan" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- BUY / CONTACT -->
+    <section id="buy" class="section" aria-label="Where to buy & contact">
+      <div class="container grid cols-2">
+        <div>
+          <h2 class="serif"><span data-l10n="en">Where to buy</span><span data-l10n="es">Dónde comprar</span></h2>
+          <p><span data-l10n="en">Find 3Bite at select retailers and restaurants. If we’re not yet in your area, drop us a line—we’re expanding thoughtfully.</span><span data-l10n="es">Encuentra 3Bite en tiendas y restaurantes selectos. Si aún no estamos en tu zona, escríbenos: estamos creciendo con cuidado.</span></p>
+          <div class="cta-row">
+            <a class="btn" href="#"><span data-l10n="en">Retailers (coming soon)</span><span data-l10n="es">Tiendas (próximamente)</span></a>
+            <a class="btn secondary" href="#contact"><span data-l10n="en">Contact us</span><span data-l10n="es">Contáctanos</span></a>
+          </div>
+        </div>
+
+        <div id="contact" class="card">
+          <h3><span data-l10n="en">Contact</span><span data-l10n="es">Contacto</span></h3>
+          <form aria-labelledby="contact">
+            <div>
+              <label for="name"><span data-l10n="en">Name</span><span data-l10n="es">Nombre</span></label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div>
+              <label for="message"><span data-l10n="en">Message</span><span data-l10n="es">Mensaje</span></label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="btn" type="submit"><span data-l10n="en">Send</span><span data-l10n="es">Enviar</span></button>
+            <p style="font-size:.9rem;color:#555;margin:.25rem 0 0"><span data-l10n="en">By submitting, you confirm you are 21+.</span><span data-l10n="es">Al enviar confirmas que eres mayor de 21 años.</span></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-label="Frequently asked questions">
+      <div class="container">
+        <h2 class="serif">FAQ</h2>
+
+        <article class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="a1" id="q1">
+            <span><span data-l10n="en">What’s the difference between mezcal and tequila?</span><span data-l10n="es">¿Cuál es la diferencia entre mezcal y tequila?</span></span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div id="a1" class="faq-a" role="region" aria-labelledby="q1" hidden>
+            <p><span data-l10n="en">Tequila is a type of mezcal made primarily from Blue Weber agave and cooked in above-ground ovens. Mezcal can be made from many agave species and is traditionally roasted in earthen pits, giving a broader range of aromas—often with gentle smoke.</span><span data-l10n="es">El tequila es un tipo de mezcal hecho principalmente con agave Azul y cocido en hornos de mampostería. El mezcal puede elaborarse con muchas especies y se cuece tradicionalmente en hornos cónicos, ofreciendo una gama más amplia de aromas—con un ahumado sutil.</span></p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="a2" id="q2">
+            <span><span data-l10n="en">How should I serve and store mezcal?</span><span data-l10n="es">¿Cómo servir y almacenar el mezcal?</span></span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div id="a2" class="faq-a" role="region" aria-labelledby="q2" hidden>
+            <p><span data-l10n="en">Serve neat in a copita or veladora at cool room temperature; avoid frost-cold. Store upright, away from heat and sunlight, with the cap sealed.</span><span data-l10n="es">Sírvese solo en copita o veladora a temperatura fresca; evita el frío extremo. Guarda la botella en vertical, lejos de calor y luz, con el tapón bien cerrado.</span></p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="a3" id="q3">
+            <span><span data-l10n="en">Is the smoky note natural?</span><span data-l10n="es">¿El toque ahumado es natural?</span></span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div id="a3" class="faq-a" role="region" aria-labelledby="q3" hidden>
+            <p><span data-l10n="en">Yes. Roasting agave in stone-lined pits over wood embers imparts a natural smokiness. We aim for balance—never overpowering.</span><span data-l10n="es">Sí. La cocción en hornos cónicos con brasas de leña aporta ahumado natural. Buscamos balance—nunca que opaque.</span></p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-q" aria-expanded="false" aria-controls="a4" id="q4">
+            <span><span data-l10n="en">What mixes well with mezcal?</span><span data-l10n="es">¿Con qué mezclar el mezcal?</span></span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div id="a4" class="faq-a" role="region" aria-labelledby="q4" hidden>
+            <p><span data-l10n="en">Citrus (lime, grapefruit), ginger, pineapple, and bitters highlight mezcal’s brightness while letting the agave speak.</span><span data-l10n="es">Cítricos (limón, toronja), jengibre, piña y bitters realzan el brillo del mezcal sin tapar al agave.</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section" aria-label="Footer">
+    <div class="container grid cols-2">
+      <div>
+        <p><strong>3Bite Agave Spirit</strong> — <span data-l10n="en">Enjoy responsibly. 21+ only.</span><span data-l10n="es">Disfruta con responsabilidad. Solo +21.</span></p>
+        <p><a href="#">Privacy Policy</a> • <a href="#">Terms</a> • © <span id="year"></span> 3Bite.</p>
+      </div>
+      <div>
+        <p><span data-l10n="en">Questions?</span><span data-l10n="es">¿Dudas?</span> <a href="#contact"><span data-l10n="en">Contact us</span><span data-l10n="es">Contáctanos</span></a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD: Product & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "3Bite Agave Spirit",
+    "category": "Mezcal",
+    "brand": {"@type":"Brand","name":"3Bite"},
+    "description": "Artisan mezcal imported from Oaxaca, traditionally roasted, tahona-crushed, naturally fermented, and distilled in copper or clay.",
+    "additionalProperty": [
+      {"@type":"PropertyValue","name":"ABV","value":"45%"},
+      {"@type":"PropertyValue","name":"Agave","value":"Espadín (Angustifolia)"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What’s the difference between mezcal and tequila?","acceptedAnswer":{"@type":"Answer","text":"Tequila is a type of mezcal made primarily from Blue Weber agave and cooked in above-ground ovens. Mezcal can be made from many agave species and is traditionally roasted in earthen pits, yielding gentle smokiness."}},
+      {"@type":"Question","name":"How should I serve and store mezcal?","acceptedAnswer":{"@type":"Answer","text":"Serve neat in a copita or veladora at cool room temperature; avoid frost-cold. Store upright, away from heat and sunlight, with the cap sealed."}},
+      {"@type":"Question","name":"Is the smoky note natural?","acceptedAnswer":{"@type":"Answer","text":"Yes. Roasting agave in stone-lined pits over wood embers imparts a natural smokiness. We aim for balance—never overpowering."}},
+      {"@type":"Question","name":"What mixes well with mezcal?","acceptedAnswer":{"@type":"Answer","text":"Citrus (lime, grapefruit), ginger, pineapple, and bitters highlight mezcal’s brightness while letting the agave speak."}}
+    ]
+  }
+  </script>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const nav = document.querySelector('.nav');
+    const menuBtn = document.querySelector('.menu-btn');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // Close mobile menu after tapping a link
+    document.querySelectorAll('.links a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 900px)').matches){
+          nav.classList.remove('open');
+          if (menuBtn) menuBtn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+
+    // Language toggle (default EN). Stores preference in localStorage.
+    const root = document.documentElement;
+    const setLang = (lang) => {
+      root.setAttribute('data-lang', lang);
+      try { localStorage.setItem('lang', lang); } catch(e){}
+      // update aria-pressed
+      document.querySelectorAll('[id^="lang-"]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang===lang)));
+    };
+    document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+    document.getElementById('lang-es').addEventListener('click', () => setLang('es'));
+    const saved = (function(){ try{return localStorage.getItem('lang');}catch(e){return null}})();
+    if(saved){ setLang(saved); }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      const ans = document.getElementById(btn.getAttribute('aria-controls'));
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        ans.hidden = expanded;
+      });
+    });
+
+    // Basic form handler (demo only)
+    document.querySelector('form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert(document.documentElement.getAttribute('data-lang') === 'es' ? '¡Gracias! Te contactaremos pronto.' : 'Thank you! We\'ll be in touch soon.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
